@@ -1,0 +1,29 @@
+th_strings tests
+	Tests palindrome detection
+	Tests for palindrome detection case-insensitivity
+	Tests for palindrome detection omission of punctuation
+	Tests to see if wordcount is a hash
+	Tests wordcount
+	Tests for wordcount omission of punctuation
+	Tests wordcount for empty string
+	Tests wordcount omission of white spacing
+	Tests anagram grouping on the empty string
+	Tests structure of anagram grouping; should be embedded array
+	Tests anagram grouping
+	CUSTOM TEST: additional testing of the anagram grouping function
+
+dessert tests
+	Tests dessert constructor; makes a cake and an apple
+	CUSTOM TEST: added diabeetus dessert; should be delicious but unhealthy
+	Tests calories mutator
+	Tests name mutator
+	Tests jelly bean constructor; one instance when licorice and another when not licorice
+
+rock_paper_scissors tests
+	Tests rock beats scissors
+	Tests scissors beats paper
+	Tests paper beats rock
+	Tests player1 win by default; both pick the same strategy
+	CUSTOM TEST: tests case-insensitivity for strategies
+	Tests valid strategy
+	Tests tournament mechanic

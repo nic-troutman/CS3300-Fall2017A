@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+ <% provide(:title, 'Price Tracker 5000') %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body style="height:1000px">
+
+<nav class="navbar navbar-light navbar-fixed-top" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">Price Tracker 5000</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href=""><strong>My Items</strong></a></li>
+      <li><a href="/new_item">Add item</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Contact Us</a></li>
+      <li></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if logged_in? %>
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+      <% else %>
+        <li><span class="glyphicon glyphicon-user"></span><%= link_to "Sign Up", signup_path %></li>
+        <li><span class="glyphicon glyphicon-log-in"></span><%= link_to "Log In", login_path %></li>
+      <% end %>
+    </ul>
+    <form class="navbar-form navbar-right">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+</nav>sdasd
+                <div class="row" style="height:100px"></div>
+                <div class="container" style="background-color:white; width:70%; height:900px">
+                        <div class="row" style="height:20px"></div>
+  <% @items.each do |item| %>
+    <div class="row">
+      <div class="col-sm-1" style="background-color:white; color: white"></div>
+      <% if item.current_price == item.target_price || item.current_price.to_i < item.target_price.to_i %> <!--Only highlight the sweet deals-->
+	<div class="sweetdeal">
+          <div class="col-sm-6" style="background-color:lightgreen"><%= link_to item.name, item_url(item) %></div>
+          <div class="col-sm-2" style="background-color:lightgreen">Current: <%= item.current_price %></div>
+          <div class="col-sm-2" style="background-color:lightgreen">Target: <%= item.target_price %></div>
+        </div>
+      <% else %>
+        <div class="col-sm-6" style="background-color:white"><%= link_to item.name, item_url(item) %></div>
+        <div class="col-sm-2" style="background-color:white">Current: <%= item.current_price %></div>
+        <div class="col-sm-2" style="background-color:white">Target: <%= item.target_price %></div>      
+      <% end %>
+      <div class="col-sm-1" style="background-color:white; color: white"></div>
+    </div>
+  <% end %>asdasd
+</div>
+                <!-- Bootstrap assets: jQuery, Tether, and Bootstrap JS -->
+                <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        </body>
+</html>
